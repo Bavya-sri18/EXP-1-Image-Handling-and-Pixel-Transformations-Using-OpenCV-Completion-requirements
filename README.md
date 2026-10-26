@@ -58,9 +58,9 @@ img = cv2.imread(r'D:\Screenshots\Bavya.jpeg', cv2.IMREAD_COLOR)
 
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-plt.imshow(img_rgb, cmap='viridis')  # You can change 'viridis' to another cmap or use None for RGB images
+plt.imshow(img_rgb, cmap='viridis')  
 plt.title("Original Image")
-plt.axis('off')  # Removes axis ticks and labels
+plt.axis('off') 
 plt.show()
 ```
 <img width="360" height="510" alt="image" src="https://github.com/user-attachments/assets/9e20014e-f5ff-4e3b-bc58-5d782e449b13" />
@@ -69,13 +69,9 @@ plt.show()
 ##### 2.1 Draw a Line
 ```python
 image = cv2.imread(r'D:\Screenshots\Bavya.jpeg') 
-
-# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img_rgb.shape
-
-# Draw a line from top-left to bottom-right
-line_img = cv2.line(img_rgb, (0, 0), (1200, 1600), (0, 0, 255), 5) # cv2.line(image, start_point, end_point, color, thickness)
+line_img = cv2.line(img_rgb, (0, 0), (1200, 1600), (0, 0, 255), 5) 
 
 plt.imshow(line_img, cmap='viridis')  
 plt.title("Image with Line")
@@ -89,15 +85,11 @@ plt.show()
 
 ```python
 image = cv2.imread(r'D:\Screenshots\Bavya.jpeg') 
-
-# Convert BGR (OpenCV's default) to RGB (Matplotlib's expected color order)
 img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
 img_rgb.shape
 
-circle_img = cv2.circle(img_rgb,(640,420),150,(255,0,0),10) # cv2.circle(image, center, radius, color, thickness)
+circle_img = cv2.circle(img_rgb,(640,420),150,(255,0,0),10) 
 
-# Display the image
 plt.imshow(circle_img, cmap='viridis')  
 plt.title("Image with Circle")
 plt.axis('off')  
@@ -136,21 +128,17 @@ plt.title("Image with Text")
 plt.axis('off')
 plt.show()
 ```
-
+<img width="415" height="586" alt="image" src="https://github.com/user-attachments/assets/f1997022-85e5-4267-8814-bc63ab75d3a0" />
 
 #### Step 3: Color Space Conversion
 ```python
 img = cv2.imread(r'D:\Screenshots\Bavya.jpeg')
-
-# Check whether the image loaded successfully
 if img is None:
     print("Error: Image not found. Check the file path.")
 
 else:
-    # Convert BGR to RGB
     image_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-    # Original RGB Image
     plt.figure(figsize=(15, 8))
 
     plt.subplot(2, 3, 1)
@@ -158,7 +146,6 @@ else:
     plt.title("Original RGB Image")
     plt.axis("off")
 
-    # Convert RGB to HSV
     image_hsv = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2HSV)
 
     plt.subplot(2, 3, 2)
@@ -166,25 +153,19 @@ else:
     plt.title("HSV Image")
     plt.axis("off")
 
-    # Convert RGB to Grayscale
     image_gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
 
     plt.subplot(2, 3, 3)
     plt.imshow(image_gray, cmap='gray')
     plt.title("Grayscale Image")
     plt.axis("off")
-
-    # Convert RGB to YCrCb
     image_ycrcb = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2YCrCb)
 
     plt.subplot(2, 3, 4)
     plt.imshow(image_ycrcb)
     plt.title("YCrCb Image")
     plt.axis("off")
-
-    # Convert HSV back to RGB
     image_hsv_to_rgb = cv2.cvtColor(image_hsv, cv2.COLOR_HSV2RGB)
-
     plt.subplot(2, 3, 5)
     plt.imshow(image_hsv_to_rgb)
     plt.title("HSV to RGB Image")
@@ -198,10 +179,8 @@ else:
 
 #### Step 4: Pixel Manipulation
 ```python
-image[200:500, 200:500] = [255, 255, 255]  # Rows: 200-499, Columns: 200-499
-
+image[200:500, 200:500] = [255, 255, 255]  
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-
 plt.imshow(image_rgb)
 plt.title("Image with 300x300 White Block")
 plt.axis("off")
@@ -214,36 +193,24 @@ plt.show()
 ```python
 image = cv2.imread(r'D:\Screenshots\Bavya.jpeg') 
 image.shape
-
-# Resize the image to half its size
-resized_image = cv2.resize(image, (768 // 2, 600 // 2))  # (new_width, new_height)
-
-# Convert BGR to RGB for displaying with Matplotlib
+resized_image = cv2.resize(image, (768 // 2, 600 // 2))  
 resized_image_rgb = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
-
 resized_image_rgb.shape
-
-# Display the resized image
 plt.imshow(resized_image_rgb)
 plt.title("Resized Image (Half Size)")
 plt.axis("off")
 plt.show()
 ```
-
+<img width="485" height="402" alt="image" src="https://github.com/user-attachments/assets/7fb03676-047f-4084-b7d0-31fb72bac23f" />
 
 #### Step 6: Image Cropping
 ```python
 image = cv2.imread(r'D:\Screenshots\Bavya.jpeg')
-
 image.shape
-
-# Crop a 300x300 region starting from (50, 50)
 roi = image[50:350, 50:350]  # Rows: 50-349, Columns: 50-349
 
-# Convert BGR to RGB for displaying with Matplotlib
 roi_rgb = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
 
-# Display the cropped region (ROI)
 plt.imshow(roi_rgb)
 plt.title("Cropped Region of Interest (ROI)")
 plt.axis("off")
