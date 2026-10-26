@@ -66,7 +66,7 @@ plt.show()
 <img width="360" height="510" alt="image" src="https://github.com/user-attachments/assets/9e20014e-f5ff-4e3b-bc58-5d782e449b13" />
 
 #### Step 2: Draw Shapes and Add Text
-#####2.1 Draw a Line
+##### 2.1 Draw a Line
 ```python
 image = cv2.imread(r'D:\Screenshots\Bavya.jpeg') 
 
@@ -127,20 +127,16 @@ plt.show()
 ```PYTHON
 image = cv2.imread(r'D:\Screenshots\Bavya.jpeg')
 
-# Convert BGR to RGB
 img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-# Add text to the image
-text_img = cv2.putText(img_rgb, "OpenCV Drawing", (2, 60),
+text_img = cv2.putText(img_rgb, "BAVYA SRI B", (2, 60),
                        cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 0), 10)
-
-# Display the image
 plt.imshow(text_img)
 plt.title("Image with Text")
 plt.axis('off')
 plt.show()
 ```
-<img width="360" height="511" alt="image" src="https://github.com/user-attachments/assets/39273bb5-3170-4521-83c4-c7e2469851bd" />
+
 
 #### Step 3: Color Space Conversion
 ```python
